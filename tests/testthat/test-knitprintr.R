@@ -1,4 +1,5 @@
 context("summary lme output")
+library(stringr)
 
 core_html = function(file){
   f1 = readLines(file)
@@ -23,9 +24,9 @@ test_that("Knit rmd and compare with expected output",{
   f1 = core_html(outfile)
   f2 = core_html(expect_html)
   cat("\n outfile -----------------\n\n")
-  cat(f1[1:2], sep = "\n")
+  cat(str_length(f1[1:20]), sep = ", ")
   cat("\n expect_html -----------------\n\n")
-  cat(f2[1:2], sep = "\n")
+  cat(str_length(f2[1:20]), sep = ", ")
   expect_true(all.equal(f1,f2))
 })
 
