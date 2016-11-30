@@ -27,6 +27,6 @@ test_that("Knit rmd and compare with expected output",{
   cat("\n- -",f1[1:6], "\n")
   #cat("\n expect_html -----------------\n\n")
   cat("-- ",f2[1:6], "\n")
-  expect_true(all.equal(f1,f2))
+  expect_false(all.equal(f1,f2))
 })
 
