@@ -4,7 +4,7 @@
 
 Additional function to pretty-print with `knitr` and `printr`. See https://github.com/yihui/printr.
 
-Currently implemented: Methods for
+Currently implemented are methods for
 
 - `summary(lme)` # package `nlme`
 

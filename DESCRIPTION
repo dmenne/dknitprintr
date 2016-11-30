@@ -2,7 +2,8 @@ Package: Dknitprintr
 Title: Utility Functions To Print With Knitr
 Version: 0.1.0.0
 Authors@R: person("Dieter", "Menne", email = "dieter.menne@menne-biomed.de", role = c("aut", "cre"))
-Description: Custom implementation to print structures with knitr and printr.
+Description: Custom implementation to print structures with knitr and printr; 
+  currently implemented methods for summary(lme).
 Depends:
     R (>= 3.3.2)
 License: GPL (>=3)
