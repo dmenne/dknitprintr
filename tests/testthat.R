@@ -1,4 +1,4 @@
 library(testthat)
 library(Dknitprintr)
-library(string)
+library(stringr)
 test_check("Dknitprintr")
