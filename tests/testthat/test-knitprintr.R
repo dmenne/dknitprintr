@@ -1,5 +1,4 @@
 context("summary lme output")
-library(stringr)
 
 core_html = function(file){
   f1 = readLines(file)
@@ -10,6 +9,7 @@ core_html = function(file){
 }
 
 test_that("Knit rmd and compare with expected output",{
+  #skip_on_travis() ## does not work yet on travis
   outfile = tempfile(fileext = ".html")
   use_rmd = "knitprinter.Rmd"
   expect_true(file.exists(use_rmd))
@@ -23,9 +23,9 @@ test_that("Knit rmd and compare with expected output",{
   f1 = core_html(outfile)
   f2 = core_html(expect_html)
   cat("\n outfile -----------------\n\n")
-  cat(f1[1:20], sep = "\n")
+  cat(f1[1:2], sep = "\n")
   cat("\n expect_html -----------------\n\n")
-  cat(f2[1:20], sep = "\n")
+  cat(f2[1:2], sep = "\n")
   expect_true(all.equal(f1,f2))
 })
 

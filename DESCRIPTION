@@ -18,6 +18,7 @@ Suggests:
   testthat,
   rmarkdown,
   tibble,
-  nlme
+  nlme,
+  stringr
 Remotes:
   yihui/printr
