@@ -5,7 +5,7 @@ Authors@R: person("Dieter", "Menne", email = "dieter.menne@menne-biomed.de", rol
 Description: Custom implementation to print structures with knitr and printr; 
   currently implemented methods for summary(lme).
 Depends:
-    R (>= 3.3.2)
+    R (>= 3.3.1)
 License: GPL (>=3)
 Encoding: UTF-8
 LazyData: true
