@@ -1,5 +1,13 @@
 context("summary lme output")
+library(stringr)
 
+core_html = function(file){
+  f1 = readLines(file)
+  from_i = which(str_detect(f1,"^\\<!-- code folding -->"))[1]
+  to_i = which(str_detect(f1,"^\\<script>"))[2]
+  ret = f1[(from_i + 1):(to_i + 1)]
+  ret[str_length(ret)>9]
+}
 
 test_that("Knit rmd and compare with expected output",{
   outfile = tempfile(fileext = ".html")
@@ -11,6 +19,13 @@ test_that("Knit rmd and compare with expected output",{
   unzip(expect_zip, exdir = tempdir())
   expect_html = file.path(tempdir(), "knitprinter.html")
   expect_true(file.exists(expect_html))
-  expect_true(all.equal(readLines(outfile), readLines(expect_html)))
+
+  f1 = core_html(outfile)
+  f2 = core_html(expect_html)
+  cat("\n outfile -----------------\n\n")
+  cat(f1[1:20], sep = "\n")
+  cat("\n expect_html -----------------\n\n")
+  cat(f2[1:20], sep = "\n")
+  expect_true(all.equal(f1,f2))
 })
 
