@@ -10,7 +10,7 @@ core_html = function(file){
 }
 
 test_that("Knit rmd and compare with expected output",{
-  #skip_on_travis() ## does not work yet on travis
+  skip_on_travis() ## does not work yet on travis
   outfile = tempfile(fileext = ".html")
   use_rmd = "knitprinter.Rmd"
   expect_true(file.exists(use_rmd))
@@ -20,13 +20,6 @@ test_that("Knit rmd and compare with expected output",{
   unzip(expect_zip, exdir = tempdir())
   expect_html = file.path(tempdir(), "knitprinter.html")
   expect_true(file.exists(expect_html))
-
-  f1 = core_html(outfile)
-  f2 = core_html(expect_html)
-  #cat("\n outfile -----------------\n\n")
-  cat("\n- -",f1[1:6], "\n")
-  #cat("\n expect_html -----------------\n\n")
-  cat("-- ",f2[1:6], "\n")
-  expect_false(all.equal(f1,f2))
+  expect_true(all.equal(f1,f2))
 })
 
