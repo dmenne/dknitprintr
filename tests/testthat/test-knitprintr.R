@@ -20,6 +20,6 @@ test_that("Knit rmd and compare with expected output",{
   unzip(expect_zip, exdir = tempdir())
   expect_html = file.path(tempdir(), "knitprinter.html")
   expect_true(file.exists(expect_html))
-  expect_true(all.equal(f1,f2))
+  expect_true(all.equal(readLines(expect_html),readLines(outfile)))
 })
 
