@@ -54,3 +54,10 @@ summary(lme(Hours~pgroup*app+dayc, random = ~1|Short, data = df))
 summary(lme(Hours~pgroup*app*dayc, random = ~1|Short, data = d))
 summary(lme(Hours~pgroup*app*dayc, random = ~1|Short, data = df))
 ```
+
+# Extended linear model
+
+```{r}
+summary(gls(Hours~pgroup*app*dayc, data = d))
+summary(gls(Hours~pgroup*app*dayc, data = df))
+```

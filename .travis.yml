@@ -5,6 +5,3 @@ sudo: false
 cache: packages
 latex: false
 
-
-after_failure:
-  - ./run.sh dump_logs

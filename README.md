@@ -1,6 +1,6 @@
 # Dprintr
 
-[![Travis-CI Build Status](https://travis-ci.org/.svg?branch=master)](https://travis-ci.org/)
+[![Build Status](https://travis-ci.org/dmenne/dknitprintr.svg?branch=master)](https://travis-ci.org/dmenne/dknitprintr)
 
 Additional function to pretty-print with `knitr` and `printr`. See https://github.com/yihui/printr.
 
