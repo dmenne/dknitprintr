@@ -1,0 +1,9 @@
+# Title
+
+```{r }
+BeforeObjects = ls()
+```
+
+```{r }
+rm(list = setdiff(ls(), BeforeObjects))
+```

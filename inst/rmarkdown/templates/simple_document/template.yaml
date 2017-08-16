@@ -1,0 +1,4 @@
+name: Child Document (Markdown)
+description: >
+  Child document without yaml
+create_dir: false

@@ -14,4 +14,3 @@
 \description{
 Custom method for knitr/printr
 }
-
